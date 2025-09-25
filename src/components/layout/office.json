@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_layout_offices",
+  "info": {
+    "displayName": "Office"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

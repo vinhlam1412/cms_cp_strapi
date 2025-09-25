@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_components_features",
+  "info": {
+    "displayName": "Feature"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "featureItem": {
+      "type": "component",
+      "component": "components.feature-detail",
+      "repeatable": true
+    },
+    "ctaViewDetail": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

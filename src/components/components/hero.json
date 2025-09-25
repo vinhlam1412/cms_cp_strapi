@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_components_heroes",
+  "info": {
+    "displayName": "Hero"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "title2": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "banner": {
+      "type": "component",
+      "component": "shared.banner",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

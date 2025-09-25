@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_section_growth_archivements",
+  "info": {
+    "displayName": "GrowthArchivement"
+  },
+  "options": {},
+  "attributes": {
+    "heading1": {
+      "type": "string"
+    },
+    "heading2": {
+      "type": "string"
+    },
+    "archivement": {
+      "type": "component",
+      "component": "components.archivement",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

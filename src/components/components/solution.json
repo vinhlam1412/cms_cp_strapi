@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_components_solutions",
+  "info": {
+    "displayName": "Solution"
+  },
+  "options": {},
+  "attributes": {
+    "solutonDetail": {
+      "type": "component",
+      "component": "components.solution-detail",
+      "repeatable": true
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

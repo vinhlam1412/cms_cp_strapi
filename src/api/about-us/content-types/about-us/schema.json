@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_uses",
+  "info": {
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "AboutUs"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "components.hero",
+        "components.image",
+        "section.growth-driven",
+        "section.our-section",
+        "section.member-section"
+      ]
+    }
+  }
+}

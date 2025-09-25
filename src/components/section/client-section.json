@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_section_client_sections",
+  "info": {
+    "displayName": "Client Section",
+    "icon": "heart"
+  },
+  "options": {},
+  "attributes": {
+    "heading1": {
+      "type": "string"
+    },
+    "heading2": {
+      "type": "string"
+    },
+    "clientLogo": {
+      "type": "component",
+      "component": "components.client-logo",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

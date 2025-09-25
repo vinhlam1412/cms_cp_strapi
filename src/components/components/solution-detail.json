@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_components_solution_details",
+  "info": {
+    "displayName": "SolutionDetail"
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

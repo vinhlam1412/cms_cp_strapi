@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_archivements",
+  "info": {
+    "displayName": "Archivement"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

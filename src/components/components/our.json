@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_ours",
+  "info": {
+    "displayName": "Our"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

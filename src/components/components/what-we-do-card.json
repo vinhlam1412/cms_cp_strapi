@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_components_what_we_do_cards",
+  "info": {
+    "displayName": "WhatWeDoCard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "ctaButton": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

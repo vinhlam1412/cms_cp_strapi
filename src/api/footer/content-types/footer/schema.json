@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "phoneNumber": {
+      "type": "component",
+      "component": "layout.phone-number",
+      "repeatable": false
+    },
+    "offices": {
+      "type": "component",
+      "component": "layout.office",
+      "repeatable": true
+    },
+    "socialLinks": {
+      "type": "component",
+      "component": "shared.logo-link",
+      "repeatable": true
+    },
+    "email": {
+      "type": "component",
+      "component": "layout.email",
+      "repeatable": false
+    },
+    "copyrightText": {
+      "type": "text"
+    },
+    "navItem": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    }
+  }
+}

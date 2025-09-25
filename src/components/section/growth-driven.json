@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_section_growth_drivens",
+  "info": {
+    "displayName": "Growth Driven"
+  },
+  "options": {},
+  "attributes": {
+    "heading1": {
+      "type": "string"
+    },
+    "heading2": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "Solution": {
+      "type": "component",
+      "component": "components.solution",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

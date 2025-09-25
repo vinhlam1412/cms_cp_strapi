@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_member_sections",
+  "info": {
+    "displayName": "MemberSection"
+  },
+  "options": {},
+  "attributes": {
+    "members": {
+      "type": "component",
+      "component": "components.member",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

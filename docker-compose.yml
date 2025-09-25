@@ -1,0 +1,38 @@
+version: "3"
+services:
+  strapi:
+    container_name: strapi
+    build: .
+    image: strapi:latest
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}          # vd: postgres
+      DATABASE_HOST: ${DATABASE_HOST}              # vd: host.docker.internal hoặc IP/hostname DB của bạn
+      DATABASE_PORT: ${DATABASE_PORT}              # vd: 5432
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      # Nếu DB cần SSL:
+      # DATABASE_SSL: "true"
+      # DATABASE_SSL_REJECT_UNAUTHORIZED: "false"
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      APP_KEYS: ${APP_KEYS}
+      NODE_ENV: ${NODE_ENV}
+    volumes:
+      - ./config:/opt/app/config
+      - ./src:/opt/app/src
+      - ./package.json:/opt/package.json
+      - ./yarn.lock:/opt/yarn.lock
+      - ./.env:/opt/app/.env
+      - ./public/uploads:/opt/app/public/uploads
+    ports:
+      - "1337:1337"
+    networks:
+      - strapi
+
+networks:
+  strapi:
+    name: strapi
+    driver: bridge

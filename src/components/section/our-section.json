@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_our_sections",
+  "info": {
+    "displayName": "OurSection"
+  },
+  "options": {},
+  "attributes": {
+    "ours": {
+      "type": "component",
+      "component": "components.our",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

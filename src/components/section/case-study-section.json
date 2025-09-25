@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_section_case_study_sections",
+  "info": {
+    "displayName": "CaseStudy Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "caseStudy": {
+      "type": "component",
+      "component": "components.case-study",
+      "repeatable": true
+    },
+    "ctaRead": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

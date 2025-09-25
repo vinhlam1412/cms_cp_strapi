@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_section_what_we_dos",
+  "info": {
+    "displayName": "WhatWeDo"
+  },
+  "options": {},
+  "attributes": {
+    "heading1": {
+      "type": "string"
+    },
+    "heading2": {
+      "type": "string"
+    },
+    "whatWheDoCard": {
+      "type": "component",
+      "component": "components.what-we-do-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

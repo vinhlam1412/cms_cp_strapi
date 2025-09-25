@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_virtual_elements",
+  "info": {
+    "displayName": "virtualElement"
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
