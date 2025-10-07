@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "career_pages",
+  "info": {
+    "singularName": "career-page",
+    "pluralName": "career-pages",
+    "displayName": "CareerPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "components.hero",
+        "components.image"
+      ]
+    },
+    "career_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::career-list.career-list"
+    }
+  }
+}

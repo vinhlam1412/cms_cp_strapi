@@ -18,7 +18,8 @@
         "section.intro",
         "section.client-section",
         "section.growth-archivement",
-        "section.what-we-do"
+        "section.what-we-do",
+        "section.service-card-list"
       ]
     }
   }

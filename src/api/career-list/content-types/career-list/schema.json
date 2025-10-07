@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "career_lists",
+  "info": {
+    "singularName": "career-list",
+    "pluralName": "career-lists",
+    "displayName": "CareerList"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "JobName": {
+      "type": "string"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "PositionTag": {
+      "type": "text"
+    },
+    "JobTypeTag": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "buttonLink": {
+      "type": "component",
+      "component": "shared.logo-link",
+      "repeatable": false
+    }
+  }
+}

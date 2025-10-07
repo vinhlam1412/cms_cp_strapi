@@ -346,6 +346,19 @@ export interface SectionOurSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionServiceCardList extends Struct.ComponentSchema {
+  collectionName: 'components_section_service_card_lists';
+  info: {
+    displayName: 'ServiceCardList';
+  };
+  attributes: {
+    serviceCardList: Schema.Attribute.Component<
+      'components.service-card',
+      true
+    >;
+  };
+}
+
 export interface SectionServiceSection extends Struct.ComponentSchema {
   collectionName: 'components_section_service_sections';
   info: {
@@ -459,6 +472,7 @@ declare module '@strapi/strapi' {
       'section.intro': SectionIntro;
       'section.member-section': SectionMemberSection;
       'section.our-section': SectionOurSection;
+      'section.service-card-list': SectionServiceCardList;
       'section.service-section': SectionServiceSection;
       'section.what-we-do': SectionWhatWeDo;
       'shared.banner': SharedBanner;
