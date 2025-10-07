@@ -420,7 +420,7 @@ export interface SharedCard extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     primaryCTA: Schema.Attribute.Component<'shared.link', false>;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.Text;
   };
 }
 
