@@ -11,19 +11,7 @@
     "description": {
       "type": "text"
     },
-    "icon": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "primaryCTA": {
-      "type": "component",
-      "component": "shared.link",
-      "repeatable": false
-    },
-    "secondaryCTA": {
       "type": "component",
       "component": "shared.link",
       "repeatable": false

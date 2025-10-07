@@ -540,10 +540,6 @@ export interface ApiCaseStudyFieldCaseStudyField
     draftAndPublish: true;
   };
   attributes: {
-    case_study_item: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::case-study-item.case-study-item'
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -573,9 +569,8 @@ export interface ApiCaseStudyItemCaseStudyItem
     draftAndPublish: true;
   };
   attributes: {
-    case_study_fields: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::case-study-field.case-study-field'
+    blocks: Schema.Attribute.DynamicZone<
+      ['section.case-study-result', 'shared.card']
     >;
     case_study_services: Schema.Attribute.Relation<
       'oneToMany',

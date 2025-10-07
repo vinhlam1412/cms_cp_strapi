@@ -39,18 +39,19 @@
       "target": "api::case-study-service.case-study-service",
       "mappedBy": "case_study_item"
     },
-    "case_study_fields": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::case-study-field.case-study-field",
-      "mappedBy": "case_study_item"
-    },
     "content": {
       "type": "customField",
       "customField": "plugin::ckeditor5.CKEditor",
       "options": {
         "preset": "defaultHtml"
       }
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "section.case-study-result",
+        "shared.card"
+      ]
     }
   }
 }

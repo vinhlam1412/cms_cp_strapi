@@ -260,6 +260,18 @@ export interface LayoutPhoneNumber extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCaseStudyResult extends Struct.ComponentSchema {
+  collectionName: 'components_section_case_study_results';
+  info: {
+    displayName: 'CaseStudy Result';
+  };
+  attributes: {
+    result1: Schema.Attribute.Text;
+    result2: Schema.Attribute.Text;
+    results: Schema.Attribute.Component<'shared.card-text', true>;
+  };
+}
+
 export interface SectionCaseStudySection extends Struct.ComponentSchema {
   collectionName: 'components_section_case_study_sections';
   info: {
@@ -407,9 +419,18 @@ export interface SharedCard extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
-    icon: Schema.Attribute.Media<'images'>;
     primaryCTA: Schema.Attribute.Component<'shared.link', false>;
-    secondaryCTA: Schema.Attribute.Component<'shared.link', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCardText extends Struct.ComponentSchema {
+  collectionName: 'components_shared_card_texts';
+  info: {
+    displayName: 'CardText';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
@@ -465,6 +486,7 @@ declare module '@strapi/strapi' {
       'layout.header': LayoutHeader;
       'layout.office': LayoutOffice;
       'layout.phone-number': LayoutPhoneNumber;
+      'section.case-study-result': SectionCaseStudyResult;
       'section.case-study-section': SectionCaseStudySection;
       'section.client-section': SectionClientSection;
       'section.growth-archivement': SectionGrowthArchivement;
@@ -477,6 +499,7 @@ declare module '@strapi/strapi' {
       'section.what-we-do': SectionWhatWeDo;
       'shared.banner': SharedBanner;
       'shared.card': SharedCard;
+      'shared.card-text': SharedCardText;
       'shared.link': SharedLink;
       'shared.logo-link': SharedLogoLink;
     }

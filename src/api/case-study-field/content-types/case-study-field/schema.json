@@ -13,12 +13,6 @@
   "attributes": {
     "name": {
       "type": "string"
-    },
-    "case_study_item": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::case-study-item.case-study-item",
-      "inversedBy": "case_study_fields"
     }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_section_case_study_results",
+  "info": {
+    "displayName": "CaseStudy Result"
+  },
+  "options": {},
+  "attributes": {
+    "result1": {
+      "type": "text"
+    },
+    "results": {
+      "type": "component",
+      "component": "shared.card-text",
+      "repeatable": true
+    },
+    "result2": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
