@@ -693,6 +693,48 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFeatureItemFeatureItem extends Struct.CollectionTypeSchema {
+  collectionName: 'feature_items';
+  info: {
+    displayName: 'FeatureItem';
+    pluralName: 'feature-items';
+    singularName: 'feature-item';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.String;
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::feature-item.feature-item'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    related_feature_item: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::feature-item.feature-item'
+    >;
+    shareButton: Schema.Attribute.Component<'shared.logo-link', true>;
+    summary: Schema.Attribute.Text;
+    title: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
@@ -949,6 +991,10 @@ export interface ApiNewsItemNewsItem extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    related_news_items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::news-item.news-item'
+    >;
     shareButton: Schema.Attribute.Component<'shared.logo-link', true>;
     summary: Schema.Attribute.Text;
     title: Schema.Attribute.Text;
@@ -1660,6 +1706,7 @@ declare module '@strapi/strapi' {
       'api::case-study-service.case-study-service': ApiCaseStudyServiceCaseStudyService;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::contact-page.contact-page': ApiContactPageContactPage;
+      'api::feature-item.feature-item': ApiFeatureItemFeatureItem;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
