@@ -21,6 +21,11 @@
         "section.what-we-do",
         "section.service-card-list"
       ]
+    },
+    "service_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service-item.service-item"
     }
   }
 }
