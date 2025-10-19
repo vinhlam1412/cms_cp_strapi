@@ -104,6 +104,7 @@ export interface ComponentsMember extends Struct.ComponentSchema {
     displayName: 'Member';
   };
   attributes: {
+    description: Schema.Attribute.Text;
     name: Schema.Attribute.String;
     position: Schema.Attribute.String;
     profilePicture: Schema.Attribute.Media<

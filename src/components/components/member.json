@@ -20,6 +20,9 @@
         "videos",
         "audios"
       ]
+    },
+    "description": {
+      "type": "text"
     }
   },
   "config": {}
