@@ -870,6 +870,35 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
+  collectionName: 'industries';
+  info: {
+    displayName: 'Industry';
+    pluralName: 'industries';
+    singularName: 'industry';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::industry.industry'
+    > &
+      Schema.Attribute.Private;
+    logos: Schema.Attribute.Relation<'oneToMany', 'api::logo.logo'>;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
   collectionName: 'locations';
   info: {
@@ -891,6 +920,36 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
       'api::location.location'
     > &
       Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLogoLogo extends Struct.CollectionTypeSchema {
+  collectionName: 'logos';
+  info: {
+    displayName: 'Logo';
+    pluralName: 'logos';
+    singularName: 'logo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    industries: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::industry.industry'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::logo.logo'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1754,7 +1813,9 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::industry.industry': ApiIndustryIndustry;
       'api::location.location': ApiLocationLocation;
+      'api::logo.logo': ApiLogoLogo;
       'api::menu-item.menu-item': ApiMenuItemMenuItem;
       'api::menu.menu': ApiMenuMenu;
       'api::news-item.news-item': ApiNewsItemNewsItem;
