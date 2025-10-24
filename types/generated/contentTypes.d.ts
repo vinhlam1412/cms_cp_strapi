@@ -572,8 +572,8 @@ export interface ApiCaseStudyItemCaseStudyItem
     blocks: Schema.Attribute.DynamicZone<
       ['section.case-study-result', 'shared.card']
     >;
-    case_study_services: Schema.Attribute.Relation<
-      'oneToMany',
+    case_study_service: Schema.Attribute.Relation<
+      'oneToOne',
       'api::case-study-service.case-study-service'
     >;
     category: Schema.Attribute.String;
@@ -616,8 +616,8 @@ export interface ApiCaseStudyServiceCaseStudyService
     draftAndPublish: true;
   };
   attributes: {
-    case_study_item: Schema.Attribute.Relation<
-      'manyToOne',
+    case_study_items: Schema.Attribute.Relation<
+      'oneToMany',
       'api::case-study-item.case-study-item'
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1060,6 +1060,7 @@ export interface ApiNewsItemNewsItem extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::news-item.news-item'
     >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     shareButton: Schema.Attribute.Component<'shared.logo-link', true>;
     summary: Schema.Attribute.Text;
     title: Schema.Attribute.Text;

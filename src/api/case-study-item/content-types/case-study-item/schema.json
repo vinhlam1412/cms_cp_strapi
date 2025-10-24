@@ -33,11 +33,10 @@
     "category": {
       "type": "string"
     },
-    "case_study_services": {
+    "case_study_service": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::case-study-service.case-study-service",
-      "mappedBy": "case_study_item"
+      "relation": "oneToOne",
+      "target": "api::case-study-service.case-study-service"
     },
     "content": {
       "type": "customField",

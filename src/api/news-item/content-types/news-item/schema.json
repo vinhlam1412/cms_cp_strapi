@@ -46,6 +46,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::news-item.news-item"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }
