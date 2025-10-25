@@ -29,6 +29,11 @@
       "options": {
         "preset": "defaultHtml"
       }
+    },
+    "serviceContent": {
+      "type": "component",
+      "component": "components.service-content",
+      "repeatable": true
     }
   }
 }

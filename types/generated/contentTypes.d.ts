@@ -1099,6 +1099,10 @@ export interface ApiServiceItemServiceItem extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    serviceContent: Schema.Attribute.Component<
+      'components.service-content',
+      true
+    >;
     subService: Schema.Attribute.RichText;
     title1: Schema.Attribute.String;
     title2: Schema.Attribute.String;

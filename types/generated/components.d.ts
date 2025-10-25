@@ -149,6 +149,24 @@ export interface ComponentsServiceCard extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsServiceContent extends Struct.ComponentSchema {
+  collectionName: 'components_components_service_contents';
+  info: {
+    displayName: 'ServiceContent';
+  };
+  attributes: {
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imageLeft: Schema.Attribute.Boolean;
+  };
+}
+
 export interface ComponentsSolution extends Struct.ComponentSchema {
   collectionName: 'components_components_solutions';
   info: {
@@ -529,6 +547,7 @@ declare module '@strapi/strapi' {
       'components.our': ComponentsOur;
       'components.service': ComponentsService;
       'components.service-card': ComponentsServiceCard;
+      'components.service-content': ComponentsServiceContent;
       'components.solution': ComponentsSolution;
       'components.solution-detail': ComponentsSolutionDetail;
       'components.testimonials': ComponentsTestimonials;
