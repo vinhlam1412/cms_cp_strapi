@@ -1,5 +1,6 @@
+// ví dụ: /src/api/contact/controllers/contact.ts
 export default {
-  async send(ctx) {
+ async send(ctx) {
     try {
       const { name, phone, email, services, message, subject } = ctx.request.body;
 
@@ -37,7 +38,7 @@ export default {
 
       // Gửi email bằng plugin email
       await strapi.plugin("email").service("email").send({
-        email,
+        to: email,
         subject: subject || "Liên hệ mới từ website CreativePoint",
         html,
         text,
