@@ -6,8 +6,24 @@ export default [
         useDefaults: true,
         directives: {
           'script-src': ['https://cdn.ckeditor.com'],
-          'connect-src': ['https://proxy-event.ckeditor.com']
-        }
+          'connect-src': ['https://proxy-event.ckeditor.com'],
+
+          //Custom plugin ebemded video
+          'frame-src': [
+            "'self'",
+            'https://www.youtube.com',
+            'https://www.youtube-nocookie.com',
+            'https://player.vimeo.com',
+          ],
+          'child-src': [
+            "'self'",
+            'https://www.youtube.com',
+            'https://www.youtube-nocookie.com',
+            'https://player.vimeo.com',
+          ],
+          'img-src': ["'self'", 'data:', 'blob:'],
+          'media-src': ["'self'", 'data:', 'blob:'],
+        },
       }
     }
   },
