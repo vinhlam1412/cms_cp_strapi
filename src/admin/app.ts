@@ -70,6 +70,7 @@ export default {
   // },
 
   bootstrap(app: StrapiApp) {
+    strapi.server.httpServer.requestTimeout = 30 * 60 * 1000;
     console.log(app);
   },
 };
