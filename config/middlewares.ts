@@ -33,7 +33,15 @@ export default [
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::query',
-  'strapi::body',
+  {
+    name: 'strapi::body',
+    config: {
+      jsonLimit: '200mb',
+      formLimit: '200mb',
+      textLimit: '200mb',
+      multipart: true,
+    },
+  },
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
