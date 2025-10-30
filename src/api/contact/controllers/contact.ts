@@ -1,15 +1,52 @@
 export default {
   async send(ctx) {
-    const { to, subject, html, text } = ctx.request.body;
+    try {
+      const { name, phone, email, services, message, subject } = ctx.request.body;
 
-    await strapi.plugin('email').service('email').send({
-      to,
-      subject,
-      html: html ?? '<p>Hello world!</p>',
-      text: text ?? 'Hello world!',
-      // from/replyTo sẽ lấy từ settings nếu không truyền
-    });
+      if (!name || !email || !message) {
+        return ctx.badRequest("Thiếu thông tin cần thiết.");
+      }
 
-    ctx.body = { ok: true };
+      // Tạo nội dung email HTML
+      const html = `
+        <div style="font-family:Arial,sans-serif;line-height:1.6">
+          <h2>📩 Thông tin liên hệ mới từ website CreativePoint</h2>
+          <p><strong>Người gửi:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Số điện thoại:</strong> ${phone || "Không cung cấp"}</p>
+          <p><strong>Dịch vụ quan tâm:</strong> ${(services || []).join(", ")}</p>
+          <p><strong>Nội dung:</strong></p>
+          <div style="background:#f8f8f8;padding:10px;border-radius:8px">
+            ${message.replace(/\n/g, "<br>")}
+          </div>
+          <hr/>
+          <p style="font-size:12px;color:#888">
+            Email này được gửi tự động từ form liên hệ trên website.
+          </p>
+        </div>
+      `;
+
+      const text = `
+        Liên hệ mới từ website CreativePoint:
+        - Người gửi: ${name}
+        - Email: ${email}
+        - Số điện thoại: ${phone || "Không cung cấp"}
+        - Dịch vụ: ${(services || []).join(", ")}
+        - Nội dung: ${message}
+      `;
+
+      // Gửi email bằng plugin email
+      await strapi.plugin("email").service("email").send({
+        email,
+        subject: subject || "Liên hệ mới từ website CreativePoint",
+        html,
+        text,
+      });
+
+      ctx.send({ ok: true });
+    } catch (err) {
+      console.error("Email send error:", err);
+      ctx.internalServerError("Không thể gửi email. Vui lòng thử lại sau.");
+    }
   },
 };
