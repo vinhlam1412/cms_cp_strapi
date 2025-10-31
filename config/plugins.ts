@@ -9,8 +9,12 @@ export default ({ env }) => (
       provider: 'nodemailer', // dùng provider Nodemailer
       providerOptions: {
         host: env('SMTP_HOST', 'smtp.gmail.com'),
-        port: env.int('SMTP_PORT', 465),
-        secure: env.bool('SMTP_SECURE', true), // true nếu dùng 465
+        port: env.int('SMTP_PORT', 587),
+        secure: env.bool('SMTP_SECURE', false), // true nếu dùng 465
+        requireTLS: true,                         // ← ép dùng STARTTLS
+        tls: {
+          servername: env('SMTP_HOST', 'smtp.gmail.com'), // SNI đúng hostname
+        },
         auth: {
           user: env('SMTP_USERNAME'),
           pass: env('SMTP_PASSWORD'),
