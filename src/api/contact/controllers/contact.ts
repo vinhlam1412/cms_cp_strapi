@@ -1,5 +1,5 @@
 // ví dụ: /src/api/contact/controllers/contact.ts
-export default {
+export default { 
   async send(ctx) {
     try {
       const { name, phone, email, services, message, subject } = ctx.request.body;
@@ -7,7 +7,6 @@ export default {
       if (!name || !email || !message) {
         return ctx.badRequest("Thiếu thông tin cần thiết.");
       }
-      console.log('[SMTP PROD]', process.env.SMTP_HOST, process.env.SMTP_PORT, 'secure=true', !!process.env.SMTP_USERNAME);
 
       const servicesArr = Array.isArray(services) ? services : (services ? [services] : []);
 
