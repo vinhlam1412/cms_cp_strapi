@@ -13,6 +13,8 @@ export default ({ env }) => ({
           user: env('SMTP_USERNAME'),
           pass: env('SMTP_PASSWORD'),
         },
+        logger: true,   // <—
+        debug: true,
       },
       settings: {
         defaultFrom: env('EMAIL_FROM', 'vinhlam1412@gmail.com'),

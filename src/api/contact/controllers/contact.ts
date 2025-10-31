@@ -1,12 +1,14 @@
 // ví dụ: /src/api/contact/controllers/contact.ts
 export default {
- async send(ctx) {
+  async send(ctx) {
     try {
       const { name, phone, email, services, message, subject } = ctx.request.body;
 
       if (!name || !email || !message) {
         return ctx.badRequest("Thiếu thông tin cần thiết.");
       }
+
+      const servicesArr = Array.isArray(services) ? services : (services ? [services] : []);
 
       // Tạo nội dung email HTML
       const html = `
@@ -15,7 +17,7 @@ export default {
           <p><strong>Người gửi:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Số điện thoại:</strong> ${phone || "Không cung cấp"}</p>
-          <p><strong>Dịch vụ quan tâm:</strong> ${(services || []).join(", ")}</p>
+          <p><strong>Dịch vụ quan tâm:</strong> ${servicesArr.join(', ')}</p>
           <p><strong>Nội dung:</strong></p>
           <div style="background:#f8f8f8;padding:10px;border-radius:8px">
             ${message.replace(/\n/g, "<br>")}
@@ -32,12 +34,12 @@ export default {
         - Người gửi: ${name}
         - Email: ${email}
         - Số điện thoại: ${phone || "Không cung cấp"}
-        - Dịch vụ: ${(services || []).join(", ")}
+        - Dịch vụ: ${servicesArr.join(', ')}
         - Nội dung: ${message}
       `;
 
       // Gửi email bằng plugin email
-      await strapi.plugin("email").service("email").sendTemplatedEmail({
+      await strapi.plugin("email").service("email").send({
         from: 'vinhlam1412@gmail.com',
         to: 'vinhlam1412@gmail.com',
         subject: subject || 'Liên hệ mới từ website CreativePoint',
