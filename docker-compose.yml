@@ -31,7 +31,8 @@ services:
       EMAIL_REPLY_TO: ${EMAIL_REPLY_TO}
       EMAIL_TEST: ${EMAIL_TEST}
       PUBLIC_URL: ${PUBLIC_URL}
-      
+      SENDGRID_API_KEY: ${SENDGRID_API_KEY}
+
     volumes:
       - ./config:/opt/app/config
       - ./src:/opt/app/src

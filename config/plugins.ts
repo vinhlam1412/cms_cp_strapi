@@ -6,26 +6,18 @@ export default ({ env }) => (
   },
    email: {
     config: {
-      provider: 'nodemailer', // dùng provider Nodemailer
+      provider: 'nodemailer',
       providerOptions: {
-        host: env('SMTP_HOST', 'smtp.gmail.com'),
-        port: env.int('SMTP_PORT', 587),
-        secure: env.bool('SMTP_SECURE', false), // true nếu dùng 465
-        requireTLS: true,                         // ← ép dùng STARTTLS
-        tls: {
-          servername: env('SMTP_HOST', 'smtp.gmail.com'), // SNI đúng hostname
-        },
+        host: env('SMTP_HOST', 'smtp.example.com'),
+        port: env('SMTP_PORT', 587),
         auth: {
           user: env('SMTP_USERNAME'),
           pass: env('SMTP_PASSWORD'),
         },
-        logger: true,   // <—
-        debug: true,
       },
       settings: {
-        defaultFrom: env('EMAIL_FROM', 'vinhlam1412@gmail.com'),
-        defaultReplyTo: env('EMAIL_REPLY_TO', 'vinhlam1412@gmail.com'),
-        testAddress: env('EMAIL_TEST', 'vinhlam1412@gmail.com'),
+        defaultFrom: 'vinhlam1412@gmail.com',
+        defaultReplyTo: 'vinhlam1412@gmail.com',
       },
     },
   },

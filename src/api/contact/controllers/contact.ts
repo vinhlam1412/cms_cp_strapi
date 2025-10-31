@@ -1,5 +1,5 @@
 // ví dụ: /src/api/contact/controllers/contact.ts
-export default { 
+export default {
   async send(ctx) {
     try {
       const { name, phone, email, services, message, subject } = ctx.request.body;
@@ -7,6 +7,7 @@ export default {
       if (!name || !email || !message) {
         return ctx.badRequest("Thiếu thông tin cần thiết.");
       }
+      console.log('[SMTP PROD]', process.env.SMTP_HOST, process.env.SMTP_PORT, 'secure=true', !!process.env.SMTP_USERNAME);
 
       const servicesArr = Array.isArray(services) ? services : (services ? [services] : []);
 
@@ -44,10 +45,24 @@ export default {
         to: 'vinhlam1412@gmail.com',
         subject: subject || 'Liên hệ mới từ website CreativePoint',
         html: html,
-        text: message,
+        text,
       });
 
       ctx.send({ ok: true });
+
+      //  await strapi.plugin("email").service("email").send({
+      //   to: 'vinhlam1412@gmail.com',
+      //   from: 'vinhlam1412@gmail.com', //e.g. single sender verification in SendGrid
+      //   cc: 'vinhlam1412@gmail.com',
+      //   bcc: 'vinhlam1412@gmail.com',
+      //   replyTo: 'vinhlam1412@gmail.com',
+      //   subject: 'The Strapi Email feature worked successfully',
+      //   text: 'Hello world!',
+      //   html: 'Hello world!',
+      // })
+
+      //ctx.send({ ok: true });
+
     } catch (err) {
       console.error("Email send error:", err);
       ctx.internalServerError("Không thể gửi email. Vui lòng thử lại sau.");
