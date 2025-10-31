@@ -39,6 +39,7 @@ export default {
       // Gửi email bằng plugin email
       await strapi.plugin("email").service("email").send({
         to: email,
+        from: "vinhlam1412@gmail.com",
         subject: subject || "Liên hệ mới từ website CreativePoint",
         html,
         text,
