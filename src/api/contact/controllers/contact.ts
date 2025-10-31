@@ -7,6 +7,7 @@ export default {
       if (!name || !email || !message) {
         return ctx.badRequest("Thiếu thông tin cần thiết.");
       }
+      console.log('[SMTP PROD]', process.env.SMTP_HOST, process.env.SMTP_PORT, 'secure=true', !!process.env.SMTP_USERNAME);
 
       const servicesArr = Array.isArray(services) ? services : (services ? [services] : []);
 
@@ -43,8 +44,8 @@ export default {
         from: 'vinhlam1412@gmail.com',
         to: 'vinhlam1412@gmail.com',
         subject: subject || 'Liên hệ mới từ website CreativePoint',
-        html,
-        text,
+        html: html,
+        text: message,
       });
 
       ctx.send({ ok: true });
