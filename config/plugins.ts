@@ -8,7 +8,7 @@ export default ({ env }) => ({
       providerOptions: {
         host: env('SMTP_HOST', 'smtp.gmail.com'),
         port: env.int('SMTP_PORT', 587),
-        secure: env.bool('SMTP_SECURE', false), // true nếu dùng 465
+        secure: env.bool('SMTP_SECURE', true), // true nếu dùng 465
         auth: {
           user: env('SMTP_USERNAME'),
           pass: env('SMTP_PASSWORD'),
