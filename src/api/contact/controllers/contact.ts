@@ -58,7 +58,7 @@ export default {
       await strapi.plugin("email").service("email").send({
         from: 'auto.notification.creativepoint@gmail.com',
         to: 'Cs@creativepoint.vn',
-        subject: subject || 'New Contact Form Submission from Website',
+        subject: 'New Contact Form Submission from Website',
         html,
         text,
       });
