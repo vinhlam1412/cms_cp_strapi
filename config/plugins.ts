@@ -75,8 +75,8 @@ const config = ({ env }: { env: EnvFunction }): PluginConfig => {
           },
         },
         settings: {
-          defaultFrom: 'vinhlam1412@gmail.com',
-          defaultReplyTo: 'vinhlam1412@gmail.com',
+          defaultFrom: 'auto.notification.creativepoint@gmail.com',
+          defaultReplyTo: 'auto.notification.creativepoint@gmail.com',
         },
       },
     },
