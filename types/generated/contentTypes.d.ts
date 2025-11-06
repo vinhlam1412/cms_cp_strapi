@@ -449,6 +449,12 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
       'api::about-us.about-us'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -723,10 +729,11 @@ export interface ApiFeatureItemFeatureItem extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    related_feature_item: Schema.Attribute.Relation<
-      'oneToOne',
+    related_feature_items: Schema.Attribute.Relation<
+      'oneToMany',
       'api::feature-item.feature-item'
     >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     shareButton: Schema.Attribute.Component<'shared.logo-link', true>;
     summary: Schema.Attribute.Text;
     title: Schema.Attribute.Text;

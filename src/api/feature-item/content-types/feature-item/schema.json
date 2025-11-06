@@ -42,10 +42,15 @@
         "preset": "defaultHtml"
       }
     },
-    "related_feature_item": {
+    "related_feature_items": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::feature-item.feature-item"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }
