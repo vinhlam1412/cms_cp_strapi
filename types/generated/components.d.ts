@@ -234,6 +234,17 @@ export interface ComponentsWhatWeDoCard extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsWorkingHours extends Struct.ComponentSchema {
+  collectionName: 'components_components_working_hours';
+  info: {
+    displayName: 'workingHours';
+  };
+  attributes: {
+    time: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface LayoutEmail extends Struct.ComponentSchema {
   collectionName: 'components_layout_emails';
   info: {
@@ -553,6 +564,7 @@ declare module '@strapi/strapi' {
       'components.testimonials': ComponentsTestimonials;
       'components.virtual-element': ComponentsVirtualElement;
       'components.what-we-do-card': ComponentsWhatWeDoCard;
+      'components.working-hours': ComponentsWorkingHours;
       'layout.email': LayoutEmail;
       'layout.header': LayoutHeader;
       'layout.office': LayoutOffice;

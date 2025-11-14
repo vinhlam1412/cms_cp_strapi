@@ -72,6 +72,16 @@
       },
       "component": "shared.link",
       "repeatable": true
+    },
+    "workingHours": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.working-hours",
+      "repeatable": false
     }
   }
 }
