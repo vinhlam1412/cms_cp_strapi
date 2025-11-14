@@ -1434,6 +1434,7 @@ export interface ApiServicePageServicePage extends Struct.SingleTypeSchema {
         'components.hero',
         'section.growth-archivement',
         'section.service-section',
+        'section.highlight-campain-section',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

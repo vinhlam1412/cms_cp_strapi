@@ -25,7 +25,8 @@
       "components": [
         "components.hero",
         "section.growth-archivement",
-        "section.service-section"
+        "section.service-section",
+        "section.highlight-campain-section"
       ]
     },
     "seo": {

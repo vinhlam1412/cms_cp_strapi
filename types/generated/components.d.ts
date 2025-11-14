@@ -358,7 +358,7 @@ export interface SectionGrowthDriven extends Struct.ComponentSchema {
 export interface SectionHighlightCampainSection extends Struct.ComponentSchema {
   collectionName: 'components_section_highlight_campain_sections';
   info: {
-    displayName: 'HighlightCampainSection';
+    displayName: 'HighlightCampaignSection';
   };
   attributes: {
     case_study_items: Schema.Attribute.Relation<
