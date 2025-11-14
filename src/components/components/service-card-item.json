@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_service_card_items",
+  "info": {
+    "displayName": "ServiceCardItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "solutionDetails": {
+      "type": "component",
+      "component": "components.solution-detail",
+      "repeatable": true
+    },
+    "ctaButton": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,19 +1,19 @@
 {
   "collectionName": "components_section_service_sections",
   "info": {
-    "displayName": "Service Section"
+    "displayName": "ServiceSection"
   },
   "options": {},
   "attributes": {
-    "title": {
+    "title1": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
+    "title2": {
+      "type": "string"
     },
-    "feature": {
+    "serviceCard": {
       "type": "component",
-      "component": "components.feature",
+      "component": "components.service-card-item",
       "repeatable": true
     }
   },

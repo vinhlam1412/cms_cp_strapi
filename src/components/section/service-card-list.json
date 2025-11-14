@@ -4,12 +4,6 @@
     "displayName": "ServiceCardList"
   },
   "options": {},
-  "attributes": {
-    "serviceCardList": {
-      "type": "component",
-      "component": "components.service-card",
-      "repeatable": true
-    }
-  },
+  "attributes": {},
   "config": {}
 }

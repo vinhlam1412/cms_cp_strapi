@@ -20,11 +20,6 @@
         "videos",
         "audios"
       ]
-    },
-    "serviceCard": {
-      "type": "component",
-      "component": "components.service-card",
-      "repeatable": true
     }
   },
   "config": {}

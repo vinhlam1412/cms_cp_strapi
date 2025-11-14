@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_section_highlight_campain_sections",
+  "info": {
+    "displayName": "HighlightCampainSection"
+  },
+  "options": {},
+  "attributes": {
+    "title1": {
+      "type": "string"
+    },
+    "title2": {
+      "type": "string"
+    },
+    "case_study_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::case-study-item.case-study-item"
+    }
+  },
+  "config": {}
+}

@@ -132,19 +132,21 @@ export interface ComponentsService extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    serviceCard: Schema.Attribute.Component<'components.service-card', true>;
     title: Schema.Attribute.String;
   };
 }
 
-export interface ComponentsServiceCard extends Struct.ComponentSchema {
-  collectionName: 'components_components_service_cards';
+export interface ComponentsServiceCardItem extends Struct.ComponentSchema {
+  collectionName: 'components_components_service_card_items';
   info: {
-    displayName: 'ServiceCard';
+    displayName: 'ServiceCardItem';
   };
   attributes: {
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    ctaButton: Schema.Attribute.Component<'shared.link', false>;
+    solutionDetails: Schema.Attribute.Component<
+      'components.solution-detail',
+      true
+    >;
     title: Schema.Attribute.String;
   };
 }
@@ -353,6 +355,21 @@ export interface SectionGrowthDriven extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionHighlightCampainSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_highlight_campain_sections';
+  info: {
+    displayName: 'HighlightCampainSection';
+  };
+  attributes: {
+    case_study_items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::case-study-item.case-study-item'
+    >;
+    title1: Schema.Attribute.String;
+    title2: Schema.Attribute.String;
+  };
+}
+
 export interface SectionIntro extends Struct.ComponentSchema {
   collectionName: 'components_section_intros';
   info: {
@@ -393,23 +410,21 @@ export interface SectionServiceCardList extends Struct.ComponentSchema {
   info: {
     displayName: 'ServiceCardList';
   };
-  attributes: {
-    serviceCardList: Schema.Attribute.Component<
-      'components.service-card',
-      true
-    >;
-  };
+  attributes: {};
 }
 
 export interface SectionServiceSection extends Struct.ComponentSchema {
   collectionName: 'components_section_service_sections';
   info: {
-    displayName: 'Service Section';
+    displayName: 'ServiceSection';
   };
   attributes: {
-    description: Schema.Attribute.Text;
-    feature: Schema.Attribute.Component<'components.feature', true>;
-    title: Schema.Attribute.String;
+    serviceCard: Schema.Attribute.Component<
+      'components.service-card-item',
+      true
+    >;
+    title1: Schema.Attribute.String;
+    title2: Schema.Attribute.String;
   };
 }
 
@@ -557,7 +572,7 @@ declare module '@strapi/strapi' {
       'components.member': ComponentsMember;
       'components.our': ComponentsOur;
       'components.service': ComponentsService;
-      'components.service-card': ComponentsServiceCard;
+      'components.service-card-item': ComponentsServiceCardItem;
       'components.service-content': ComponentsServiceContent;
       'components.solution': ComponentsSolution;
       'components.solution-detail': ComponentsSolutionDetail;
@@ -574,6 +589,7 @@ declare module '@strapi/strapi' {
       'section.client-section': SectionClientSection;
       'section.growth-archivement': SectionGrowthArchivement;
       'section.growth-driven': SectionGrowthDriven;
+      'section.highlight-campain-section': SectionHighlightCampainSection;
       'section.intro': SectionIntro;
       'section.member-section': SectionMemberSection;
       'section.our-section': SectionOurSection;
