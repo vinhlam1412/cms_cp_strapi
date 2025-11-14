@@ -24,7 +24,8 @@
       },
       "components": [
         "components.hero",
-        "components.service"
+        "components.service",
+        "section.growth-archivement"
       ]
     },
     "seo": {

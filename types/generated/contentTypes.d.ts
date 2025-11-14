@@ -1430,7 +1430,7 @@ export interface ApiServicePageServicePage extends Struct.SingleTypeSchema {
   };
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
-      ['components.hero', 'components.service']
+      ['components.hero', 'components.service', 'section.growth-archivement']
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
