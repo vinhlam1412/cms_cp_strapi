@@ -678,6 +678,12 @@ export interface ApiCaseStudyItemCaseStudyItem
       'api::case-study-item.case-study-item'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     summary: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1408,6 +1414,12 @@ export interface ApiServiceItemServiceItem extends Struct.CollectionTypeSchema {
       'api::service-item.service-item'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     serviceContent: Schema.Attribute.Component<
       'components.service-content',
       true
