@@ -15,6 +15,16 @@
     }
   },
   "attributes": {
+    "slug": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "unique": true
+    },
     "image": {
       "type": "media",
       "pluginOptions": {
