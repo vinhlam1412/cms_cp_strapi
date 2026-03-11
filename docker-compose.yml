@@ -36,7 +36,8 @@ services:
       # Redis (BullMQ queue)
       REDIS_HOST: ${REDIS_HOST:-redis}
       REDIS_PORT: ${REDIS_PORT:-6379}
-      # REDIS_DB: ${REDIS_DB:-0}
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+      REDIS_DB: ${REDIS_DB:-0}
 
     volumes:
       - ./config:/opt/app/config
