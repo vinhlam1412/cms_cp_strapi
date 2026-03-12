@@ -4,7 +4,7 @@ export default {
       const { name, phone, email, services, message, subject } = ctx.request.body;
 
       if (!name || !email || !message) {
-        return ctx.badRequest("Thiếu thông tin cần thiết.");
+        return ctx.badRequest("Thiếu thông tin cần thiết .");
       }
 
       console.log('[SMTP PROD]', process.env.SMTP_HOST, process.env.SMTP_PORT, 'secure=true', !!process.env.SMTP_USERNAME);
